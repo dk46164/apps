@@ -1,0 +1,128 @@
+[
+    {
+        "step": "load",
+        "status": "completed",
+        "start_time": 1730059087.799855,
+        "end_time": 1730059087.8060732,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "location_df",
+                "rows": 5
+            },
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "max_temp_df",
+                "rows": 5
+            },
+            {
+                "key": "forcasted_agg_df",
+                "rows": 5
+            },
+            {
+                "key": "curr_forc_temp_diff_df",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "load",
+                "rows": 0
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:28:07.806082",
+        "stacktrace": null
+    },
+    {
+        "step": "load",
+        "status": "completed",
+        "start_time": 1730059170.1830459,
+        "end_time": 1730059170.1882281,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "location_df",
+                "rows": 5
+            },
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "max_temp_df",
+                "rows": 5
+            },
+            {
+                "key": "forcasted_agg_df",
+                "rows": 5
+            },
+            {
+                "key": "curr_forc_temp_diff_df",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "load",
+                "rows": 0
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:29:30.188237",
+        "stacktrace": null
+    },
+    {
+        "step": "load",
+        "status": "completed",
+        "start_time": 1730061368.259146,
+        "end_time": 1730061368.2665322,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "location_df",
+                "rows": 5
+            },
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "max_temp_df",
+                "rows": 5
+            },
+            {
+                "key": "forcasted_agg_df",
+                "rows": 5
+            },
+            {
+                "key": "curr_forc_temp_diff_df",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "load",
+                "rows": 0
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T02:06:08.266545",
+        "stacktrace": null
+    }
+]

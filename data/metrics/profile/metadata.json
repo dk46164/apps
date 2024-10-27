@@ -1,0 +1,116 @@
+[
+    {
+        "step": "profile",
+        "status": "completed",
+        "start_time": 1730059087.7616389,
+        "end_time": 1730059087.777964,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "location_df",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:28:07.777974",
+        "stacktrace": null
+    },
+    {
+        "step": "profile",
+        "status": "completed",
+        "start_time": 1730059170.085911,
+        "end_time": 1730059170.1036422,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "location_df",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:29:30.103654",
+        "stacktrace": null
+    },
+    {
+        "step": "profile",
+        "status": "completed",
+        "start_time": 1730061368.194601,
+        "end_time": 1730061368.217206,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "location_df",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T02:06:08.217247",
+        "stacktrace": null
+    }
+]

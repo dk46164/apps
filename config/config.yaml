@@ -1,0 +1,90 @@
+# config/config.yaml
+
+# Basic configuration
+default:
+  project_name: weather_etl
+  environment: development
+  log_level: INFO
+  timezone: UTC
+
+# File paths and directories
+paths:
+  root: /Users/deepakkumar/Desktop/weather_analyzer
+  input:
+    dir: data/input
+    weather_file: ETL_developer_Case.json
+  output:
+    dir: data/output
+  logs:
+    dir: data/logs
+  checkpoint:
+    dir: data/checkpoints
+  state:
+    dir: data/state
+  metrics:
+    dir: data/metrics
+
+# Pipeline steps configuration
+steps:
+  execution_order:
+    - extract
+    - transform
+    - profile
+    - analyze
+    - load
+  
+  dependencies:
+    transform: 
+      - extract
+    profile:
+      - transform
+    analyze:
+      - profile
+    load:
+      - analyze
+  save_metadata: true
+
+# Logging configuration
+logging:
+  version: 1
+  disable_existing_loggers: false
+  formatters:
+    standard:
+      format: "%(asctime)s - %(name)s - [%(levelname)s] - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+    detailed:
+      format: "%(asctime)s - %(name)s - [%(levelname)s] - %(pathname)s - %(funcName)s: - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: detailed
+      stream: ext://sys.stdout
+    unified_log:    # More specific name for your use case
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: weather_etl.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+  loggers:
+    weather_etl:
+      level: DEBUG
+      handlers: [console, unified_log]
+      propagate: false
+
+# Performance monitoring
+monitoring:
+  enabled: true
+  metrics:
+    - runtime
+    - memory_usage
+    - cpu_usage
+    - disk_io
+  collection_interval: 60  # seconds
+  export:
+    format: json
+    file: performance_metrics.json

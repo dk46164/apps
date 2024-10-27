@@ -1,0 +1,68 @@
+[
+    {
+        "step": "extract",
+        "status": "completed",
+        "start_time": 1730059086.334892,
+        "end_time": 1730059086.337472,
+        "duration": 0,
+        "input_files": [
+            {
+                "file_name": "/Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json",
+                "file_size": "21.390625 KB"
+            }
+        ],
+        "output_files": [
+            {
+                "key": "raw_data",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:28:06.337486",
+        "stacktrace": null
+    },
+    {
+        "step": "extract",
+        "status": "completed",
+        "start_time": 1730059168.8284302,
+        "end_time": 1730059168.830764,
+        "duration": 0,
+        "input_files": [
+            {
+                "file_name": "/Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json",
+                "file_size": "21.390625 KB"
+            }
+        ],
+        "output_files": [
+            {
+                "key": "raw_data",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T01:29:28.830778",
+        "stacktrace": null
+    },
+    {
+        "step": "extract",
+        "status": "completed",
+        "start_time": 1730061366.821263,
+        "end_time": 1730061366.8254452,
+        "duration": 0,
+        "input_files": [
+            {
+                "file_name": "/Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json",
+                "file_size": "21.390625 KB"
+            }
+        ],
+        "output_files": [
+            {
+                "key": "raw_data",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-28T02:06:06.825460",
+        "stacktrace": null
+    }
+]

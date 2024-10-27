@@ -1,0 +1,126 @@
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Initializing pipeline with config from /Users/deepakkumar/Desktop/weather_analyzer/config/config.yaml
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Created pipeline directories at /Users/deepakkumar/Desktop/weather_analyzer
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/checkpoints.py - get_required_steps: - Pipeline will run from beginning due to missing or inconsistent state
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline will execute steps: extract, transform, profile, analyze, load
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: extract
+2024-10-28 01:28:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing extract as initial step
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing extract step
+2024-10-28 01:28:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Attempting to read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Successfully read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step extract
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: transform
+2024-10-28 01:28:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing transform with input from extract
+2024-10-28 01:28:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing transform step
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step transform
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from extract
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: profile
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing profile with input from transform
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing profile step
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step profile
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from transform
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: analyze
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing analyze with input from profile
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing analyze step
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step analyze
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from profile
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: load
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing load with input from analyze
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing load step
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step load
+2024-10-28 01:28:07 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from analyze
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Cleaned State and Checkpoints files: [PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints'), PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/state')]
+2024-10-28 01:28:07 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline completed successfully
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Initializing pipeline with config from /Users/deepakkumar/Desktop/weather_analyzer/config/config.yaml
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Created pipeline directories at /Users/deepakkumar/Desktop/weather_analyzer
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/checkpoints.py - get_required_steps: - Pipeline will run from beginning due to missing or inconsistent state
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline will execute steps: extract, transform, profile, analyze, load
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: extract
+2024-10-28 01:29:28 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing extract as initial step
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing extract step
+2024-10-28 01:29:28 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Attempting to read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Successfully read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step extract
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: transform
+2024-10-28 01:29:28 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing transform with input from extract
+2024-10-28 01:29:28 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing transform step
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step transform
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from extract
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: profile
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing profile with input from transform
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing profile step
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step profile
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from transform
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: analyze
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing analyze with input from profile
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing analyze step
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step analyze
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from profile
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: load
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing load with input from analyze
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Executing load step
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step load
+2024-10-28 01:29:30 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from analyze
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Cleaned State and Checkpoints files: [PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints'), PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/state')]
+2024-10-28 01:29:30 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline completed successfully
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Initializing pipeline with config from /Users/deepakkumar/Desktop/weather_analyzer/config/config.yaml
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Created pipeline directories at /Users/deepakkumar/Desktop/weather_analyzer
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/checkpoints.py - get_required_steps: - Pipeline will run from beginning due to inconsistent or completed state state
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline will execute steps: extract, transform, profile, analyze, load
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: extract
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing extract as initial step
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Starting execution of pipeline step: extract
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Calling extract function with input data
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Attempting to read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/steps/extract/weather_data_reader.py - _read_json_file: - Successfully read file: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Saving state for step: extract
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Creating checkpoint for step: extract
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Successfully completed step: extract
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step extract
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: transform
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing transform with input from extract
+2024-10-28 02:06:06 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Starting execution of pipeline step: transform
+2024-10-28 02:06:06 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Calling transform function with input data
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Saving state for step: transform
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Creating checkpoint for step: transform
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Successfully completed step: transform
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step transform
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from extract
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: profile
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing profile with input from transform
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Starting execution of pipeline step: profile
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Calling profile function with input data
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Saving state for step: profile
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Creating checkpoint for step: profile
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Successfully completed step: profile
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step profile
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from transform
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing analyze with input from profile
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Starting execution of pipeline step: analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Calling analyze function with input data
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Saving state for step: analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Creating checkpoint for step: analyze
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Successfully completed step: analyze
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from profile
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Starting execution of step: load
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Executing load with input from analyze
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Starting execution of pipeline step: load
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Calling load function with input data
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Saving state for step: load
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Creating checkpoint for step: load
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/step_executor.py - execute_step: - Successfully completed step: load
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Saved metadata for step load
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Cleaned up data from analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed file: /Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints/analyze.done
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed file: /Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints/extract.done
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed file: /Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints/transform.done
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed file: /Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints/load.done
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed file: /Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints/profile.done
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed directory: /Users/deepakkumar/Desktop/weather_analyzer/data/state/load
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed directory: /Users/deepakkumar/Desktop/weather_analyzer/data/state/profile
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed directory: /Users/deepakkumar/Desktop/weather_analyzer/data/state/analyze
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed directory: /Users/deepakkumar/Desktop/weather_analyzer/data/state/extract
+2024-10-28 02:06:08 - weather_etl - [DEBUG] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Removed directory: /Users/deepakkumar/Desktop/weather_analyzer/data/state/transform
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/utils/state.py - clean_directory: - Cleaned contents while preserving directories: [PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/checkpoints'), PosixPath('/Users/deepakkumar/Desktop/weather_analyzer/data/state')]
+2024-10-28 02:06:08 - weather_etl - [INFO] - /Users/deepakkumar/Desktop/weather_analyzer/src/core/pipeline.py - execute_pipeline: - Pipeline completed successfully
