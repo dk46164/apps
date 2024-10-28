@@ -1,0 +1,70 @@
+2024-10-29 00:48:34  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Starting weather data profiling
+2024-10-29 00:48:34  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Processing current DataFrame
+2024-10-29 00:48:34  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Starting missing value filling for DataFrame with 5 rows
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'last_updated' with empty string and converted to uppercase
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Found 1 missing values in column 'temp_c'
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'temp_c' with 0.0
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'temp_f' with 0.0
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'is_day' with 0
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'condition_text' with empty string and converted to uppercase
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'condition_code' with 0
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'name' with empty string and converted to uppercase
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'country' with empty string and converted to uppercase
+2024-10-29 00:48:34  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'region' with empty string and converted to uppercase
+2024-10-29 00:48:34  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Completed missing value filling process
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Starting weather data profiling
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Processing current DataFrame
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Starting missing value filling for DataFrame with 5 rows
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'last_updated' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Found 1 missing values in column 'temp_c'
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'temp_c' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'temp_f' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'is_day' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'condition_text' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'condition_code' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'name' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'country' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'region' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Completed missing value filling process
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Completed processing current DataFrame
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Processing forecast DataFrame
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Starting missing value filling for DataFrame with 15 rows
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'date' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'date_epoch' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_maxtemp_c' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_maxtemp_f' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_mintemp_c' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_mintemp_f' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_avgtemp_c' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_avgtemp_f' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_maxwind_mph' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_maxwind_kph' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_totalprecip_mm' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_totalprecip_in' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_totalsnow_cm' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_avgvis_km' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_avgvis_miles' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_avghumidity' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_daily_will_it_rain' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_daily_chance_of_rain' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_daily_will_it_snow' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_daily_chance_of_snow' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'day_condition_text' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'day_condition_code' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'day_uv' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'name' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'country' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Completed missing value filling process
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Completed processing forecast DataFrame
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Processing location DataFrame
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Starting missing value filling for DataFrame with 5 rows
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'name' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'region' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'country' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'lat' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled float column 'lon' with 0.0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'tz_id' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled integer column 'localtime_epoch' with 0
+2024-10-29 00:50:40  - weather_etl.profile - [DEBUG] - weather_data_profiling._fill_missing_values: - Filled string column 'localtime' with empty string and converted to uppercase
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._fill_missing_values: - Completed missing value filling process
+2024-10-29 00:50:40  - weather_etl.profile - [INFO] - weather_data_profiling._profile_weather_data: - Completed processing location DataFrame

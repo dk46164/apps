@@ -1,0 +1,108 @@
+.
+├── Untitled.ipynb
+├── config
+│   └── config.yaml
+├── data
+│   ├── checkpoints
+│   ├── input
+│   │   └── ETL_developer_Case.json
+│   ├── logs
+│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │       ├── analyze
+│   │       │   └── analyze.log
+│   │       ├── extract
+│   │       │   └── extract.log
+│   │       ├── load
+│   │       │   └── load.log
+│   │       ├── profile
+│   │       │   └── profile.log
+│   │       ├── transform
+│   │       │   └── transform.log
+│   │       └── weather_etl.log
+│   ├── metrics
+│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │       ├── analyze
+│   │       │   └── metadata.json
+│   │       ├── extract
+│   │       │   └── metadata.json
+│   │       ├── load
+│   │       │   └── metadata.json
+│   │       ├── profile
+│   │       │   └── metadata.json
+│   │       └── transform
+│   │           └── metadata.json
+│   ├── output
+│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │       ├── aggregated_temp.csv
+│   │       ├── current_weather.csv
+│   │       ├── forecast_weather.csv
+│   │       ├── forecasted_current_temp.csv
+│   │       ├── location.csv
+│   │       └── max_temp.csv
+│   └── state
+├── dir.txt
+├── docs
+│   └── ETL_developer_Case.docx
+├── src
+│   ├── core
+│   │   ├── __pycache__
+│   │   │   ├── pipeline.cpython-312.pyc
+│   │   │   └── step_executor.cpython-312.pyc
+│   │   ├── pipeline.py
+│   │   └── step_executor.py
+│   ├── steps
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-312.pyc
+│   │   ├── analyze
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   └── weather_temperature_analysis.cpython-312.pyc
+│   │   │   └── weather_temperature_analysis.py
+│   │   ├── extract
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   ├── weather_data_reader.cpython-312.pyc
+│   │   │   │   └── weather_datamodel.cpython-312.pyc
+│   │   │   ├── weather_data_reader.py
+│   │   │   └── weather_datamodel.py
+│   │   ├── load
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   └── weather_csv_writer.cpython-312.pyc
+│   │   │   └── weather_csv_writer.py
+│   │   ├── profiling
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   └── weather_data_profiling.cpython-312.pyc
+│   │   │   └── weather_data_profiling.py
+│   │   └── transform
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       │   ├── __init__.cpython-312.pyc
+│   │       │   ├── weather_data_processing.cpython-312.pyc
+│   │       │   └── weather_temperature_analysis.cpython-312.pyc
+│   │       └── weather_data_processing.py
+│   └── utils
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-312.pyc
+│       │   ├── checkpoints.cpython-312.pyc
+│       │   ├── etl_logger.cpython-312.pyc
+│       │   ├── exceptions.cpython-312.pyc
+│       │   ├── intialize.cpython-312.pyc
+│       │   ├── logger.cpython-312.pyc
+│       │   └── state.cpython-312.pyc
+│       ├── checkpoints.py
+│       ├── etl_logger.py
+│       └── state.py
+├── tests
+│   └── test_validate.py
+├── tree.txt
+└── weather_etl.py
+
+41 directories, 65 files

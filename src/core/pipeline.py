@@ -9,7 +9,6 @@ and loading of weather data while providing state management, checkpoints and lo
 
 Functions:
     - execute_pipeline: Main pipeline execution function that:
-    - _load_config: Helper function to load YAML configuration file
     - _setup_pipeline_directories: Helper function to create pipeline directories
 
 Key Features:
@@ -21,57 +20,42 @@ Key Features:
     - Data validation and quality checks
 """
 
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 from pathlib import Path
-import yaml
 import time
 import os
 import sys 
+import uuid 
 from src.utils import checkpoints, state
 from src.core import step_executor
 from src.utils import etl_logger
 
-def _load_config(config_path: Path) -> Dict:
-    """
-    Load and parse YAML configuration file.
-    
-    Args:
-        config_path: Path to the YAML configuration file
-        
-    Returns:
-        Dict containing parsed configuration
-        
-    Raises:
-        RuntimeError: If config file cannot be loaded
-    """
-    try:
-        with open(config_path, 'r') as f:
-            return yaml.safe_load(f)
-    except Exception as e:
-        raise RuntimeError(f"Failed to load configuration file {config_path}: {str(e)}")
 
-def _setup_pipeline_directories(config: Dict, root_dir: Path) -> tuple[Path, Path, Path]:
+def _setup_pipeline_directories(config: Dict, root_dir: Path,run_id:str) -> tuple[Path, Path, Path]:
     """
     Create required pipeline directories based on configuration.
     
     Args:
         config: Pipeline configuration dictionary
         root_dir: Root directory path
+        run_id: run id for the pipeline
         
     Returns:
         Tuple containing paths to checkpoint, state and metrics directories
     """
+
     # Extract directory paths from config
     checkpoint_dir = Path(root_dir).joinpath(config['paths']['checkpoint']['dir'])
     state_dir = Path(root_dir).joinpath(config['paths']['state']['dir'])
-    output_dir = Path(root_dir).joinpath(config['paths']['output']['dir']) 
-    metrics_dir = Path(root_dir).joinpath(config['paths']['metrics']['dir'])
+    output_dir = Path(root_dir).joinpath(config['paths']['output']['dir'],run_id) 
+    metrics_dir = Path(root_dir).joinpath(config['paths']['metrics']['dir'],run_id)
 
     # Create directories if they don't exist
     for directory in [checkpoint_dir, state_dir, output_dir, metrics_dir]:
         directory.mkdir(parents=True, exist_ok=True)
-        
-    return checkpoint_dir, state_dir, metrics_dir
+
+
+    return checkpoint_dir, state_dir, metrics_dir,output_dir
 
 def execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]:
     """
@@ -89,17 +73,25 @@ def execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]
     # Initialize pipeline
     root_dir = Path.cwd()
     config_path = Path(root_dir).joinpath(config_path)
-    config = _load_config(config_path)
+    config = etl_logger._load_config(config_path)
     data_root_dir = config['paths']['root']
     
-    # Setup logging
-    logger = etl_logger.get_logger(config_path)
-    logger.info(f"Initializing pipeline with config from {config_path}")
-    
+    # get run id
+    run_id =  state.get_run_id(Path(data_root_dir).joinpath(config['paths']['state']['dir']))
+    app_name,env = config['default']['app_name'],config['default']['environment']
+
     # Create pipeline directories
-    checkpoint_dir, state_dir, metrics_dir = _setup_pipeline_directories(config, data_root_dir)
+    checkpoint_dir, state_dir, metrics_dir,output_dir = _setup_pipeline_directories(config, data_root_dir,run_id)
+    print(checkpoint_dir, state_dir, metrics_dir,output_dir)
+    input()
+    # set env variables
+    state.set_env(env,run_id,app_name,metrics_dir)
+
+    # Setup logging
+    logger = etl_logger.get_logger(config_path,run_id)
+    logger.info(f"Initializing pipeline with config from {config_path}")
     logger.info(f"Created pipeline directories at {data_root_dir}")
-    
+
     # Determine required execution steps
     pipeline_steps = config['steps']['execution_order']
     required_steps = checkpoints.get_required_steps(
@@ -124,7 +116,7 @@ def execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]
             # Configure step execution
             step_config = config['steps'].get(step, {})
             step_config.update({
-                'output': Path(data_root_dir).joinpath(config['paths']['output']['dir']),
+                'output': output_dir,
                 'input': Path(data_root_dir).joinpath(
                     config['paths']['input']['dir'],
                     config['paths']['input']['weather_file']

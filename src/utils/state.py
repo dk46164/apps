@@ -27,6 +27,7 @@ import json
 from datetime import datetime
 import os
 import shutil
+from uuid import uuid4
 
 def save_step_data(data: Dict, step: str, state_dir: Path) -> None:
     """
@@ -186,8 +187,6 @@ def get_previous_state(state: str,pipeline_states:List[str]) -> str:
         str: Previous state name, '' for invalid states
         
     """
-     
-    
     try:
         # Get index of current state
         current_index = pipeline_states.index(state)
@@ -202,7 +201,6 @@ def get_previous_state(state: str,pipeline_states:List[str]) -> str:
     except ValueError:
         # Return -1 for invalid states
         return ''
-    
 
 def clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=True):
     """
@@ -246,3 +244,61 @@ def clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=Tru
         # Log error and re-raise
         logger.error(f"Failed to clean directories {directorys}: {str(e)}")
         raise e
+def get_run_id(state_dir: Path) -> str:
+    """
+    Generate or retrieve a run ID for the application execution.
+    
+    This function either retrieves an existing run ID from a .run_id file
+    in the state directory or generates a new one using UUID4.
+    
+    Args:
+        state_dir (Path): Directory path where run ID state files are stored.
+        
+    Returns:
+        str: The run ID either retrieved from existing file or newly generated.
+        
+    """
+    # Check if any .run_id file exists in the state directory
+    if list(state_dir.glob('*.run_id')):
+        # If exists, return the stem of the state directory as run ID
+        return Path(list(state_dir.glob('*.run_id'))[0]).stem
+    else:
+        # Generate new UUID4 for run ID if no existing file found
+        run_id = str(uuid4())
+        
+        # Create state directory if it doesn't exist
+        # parents=True allows creation of parent directories if needed
+        state_dir.mkdir(exist_ok=True, parents=True)
+        
+        # Create an empty .run_id file with the generated UUID
+        # exist_ok=True prevents errors if file already exists
+        state_dir.joinpath(f'{run_id}.run_id').touch(exist_ok=True)
+        
+        return run_id
+
+
+def set_env(env: str, run_id: str, app_name: str, metrics_dir: str):
+    """
+    Set essential environment variables for the application.
+    
+    This function sets up required environment variables for application
+    configuration and metrics tracking.
+    
+    Args:
+        env (str): Environment name (e.g., 'development', 'production')
+        run_id (str): Unique identifier for the current execution
+        app_name (str): Name of the application
+        metrics_dir (str): Directory path for storing metrics
+    """
+    # Set environment variable for deployment environment
+    os.environ['ENV'] = env
+    
+    # Set environment variable for current execution run ID
+    os.environ['RUN_ID'] = run_id
+    
+    # Set environment variable for application name
+    os.environ['APP_NAME'] = app_name
+    
+    # Set environment variable for metrics directory path
+    # Convert to string in case Path object is passed
+    os.environ['METRICS_DIR'] = str(metrics_dir)

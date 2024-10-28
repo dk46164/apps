@@ -1,13 +1,10 @@
 # config/config.yaml
-
-# Basic configuration
 default:
-  project_name: weather_etl
-  environment: development
+  app_name: weather_etl
+  environment: dev
   log_level: INFO
   timezone: UTC
 
-# File paths and directories
 paths:
   root: /Users/deepakkumar/Desktop/weather_analyzer
   input:
@@ -24,7 +21,102 @@ paths:
   metrics:
     dir: data/metrics
 
-# Pipeline steps configuration
+logging:
+  version: 1
+  disable_existing_loggers: false
+  formatters:
+    standard:
+      format: "%(asctime)s - %(name)s - [%(levelname)s]  - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+    detailed:
+      format: "%(asctime)s  - %(name)s - [%(levelname)s] - %(module)s.%(funcName)s: - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: detailed
+      stream: ext://sys.stdout
+    weather_etl_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: weather_etl.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+    extract_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: extract.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+    transform_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: transform.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+    profile_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: profile.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+    analyze_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: analyze.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+    load_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: load.log
+      when: midnight
+      interval: 1
+      backupCount: 30
+      encoding: utf8
+  loggers:
+    weather_etl:
+      level: DEBUG
+      handlers: [console, weather_etl_handler]
+      propagate: false
+    weather_etl.extract:
+      level: DEBUG
+      handlers: [console, extract_handler]
+      propagate: false
+    weather_etl.transform:
+      level: DEBUG
+      handlers: [console, transform_handler]
+      propagate: false
+    weather_etl.profile:
+      level: DEBUG
+      handlers: [console, profile_handler]
+      propagate: false
+    weather_etl.analyze:
+      level: DEBUG
+      handlers: [console, analyze_handler]
+      propagate: false
+    weather_etl.load:
+      level: DEBUG
+      handlers: [console, load_handler]
+      propagate: false
+
 steps:
   execution_order:
     - extract
@@ -43,48 +135,3 @@ steps:
     load:
       - analyze
   save_metadata: true
-
-# Logging configuration
-logging:
-  version: 1
-  disable_existing_loggers: false
-  formatters:
-    standard:
-      format: "%(asctime)s - %(name)s - [%(levelname)s] - %(message)s"
-      datefmt: "%Y-%m-%d %H:%M:%S"
-    detailed:
-      format: "%(asctime)s - %(name)s - [%(levelname)s] - %(pathname)s - %(funcName)s: - %(message)s"
-      datefmt: "%Y-%m-%d %H:%M:%S"
-  handlers:
-    console:
-      class: logging.StreamHandler
-      level: INFO
-      formatter: detailed
-      stream: ext://sys.stdout
-    unified_log:    # More specific name for your use case
-      class: logging.handlers.TimedRotatingFileHandler
-      level: DEBUG
-      formatter: detailed
-      filename: weather_etl.log
-      when: midnight
-      interval: 1
-      backupCount: 30
-      encoding: utf8
-  loggers:
-    weather_etl:
-      level: DEBUG
-      handlers: [console, unified_log]
-      propagate: false
-
-# Performance monitoring
-monitoring:
-  enabled: true
-  metrics:
-    - runtime
-    - memory_usage
-    - cpu_usage
-    - disk_io
-  collection_interval: 60  # seconds
-  export:
-    format: json
-    file: performance_metrics.json

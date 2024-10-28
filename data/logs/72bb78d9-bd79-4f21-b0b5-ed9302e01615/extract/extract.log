@@ -1,0 +1,16 @@
+2024-10-29 00:48:12  - weather_etl.extract - [INFO] - weather_data_reader._read_json_file: - Starting to read JSON file from: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Checking if file exists at path: /Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Opening file for reading
+2024-10-29 00:48:12  - weather_etl.extract - [INFO] - weather_data_reader._read_json_file: - Successfully loaded JSON data containing 5 entries
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Starting validation of individual city entries
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Validating data for city: Bangkok, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Successfully validated data for city: Bangkok, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Validating data for city: Chiang Mai, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Successfully validated data for city: Chiang Mai, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Validating data for city: Phuket, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Successfully validated data for city: Phuket, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Validating data for city: Pattaya, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Successfully validated data for city: Pattaya, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Validating data for city: Hat Yai, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [DEBUG] - weather_data_reader._read_json_file: - Successfully validated data for city: Hat Yai, Thailand
+2024-10-29 00:48:12  - weather_etl.extract - [INFO] - weather_data_reader._read_json_file: - Successfully parsed and validated all 5 city entries

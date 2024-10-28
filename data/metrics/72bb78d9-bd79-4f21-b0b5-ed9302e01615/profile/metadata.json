@@ -1,0 +1,40 @@
+[
+    {
+        "step": "profile",
+        "status": "completed",
+        "start_time": 1730143094.452362,
+        "end_time": 1730143094.470061,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "current_df",
+                "rows": 5
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "location_df",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-29T00:48:14.470070",
+        "stacktrace": null
+    }
+]
