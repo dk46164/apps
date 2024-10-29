@@ -2,7 +2,7 @@
 step_executor.py
 
 This script implements a pipeline execution function that runs individual data processing steps 
-for weather data analysis. It handles extraction, transformation, profiling, analysis and loading
+for weather data analysis. It handles extraction, transformation, dq_chekcs, analysis and loading
 of weather data while providing state management, checkpoints and logging.
 
 Functions:
@@ -19,7 +19,6 @@ Key features:
 from typing import Dict, Any
 import logging
 from pathlib import Path
-import pandas as pd
 from src.steps.extract import weather_data_reader
 from src.steps.transform import weather_data_processing
 from src.steps.dq_checks import weather_data_quality_checks

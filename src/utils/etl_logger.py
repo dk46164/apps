@@ -13,28 +13,16 @@ Functions:
         - Sets up log directories and files
         - Configures handlers and formatters
         - Provides fallback logging on failure
-        
-    - log_execution_time: Decorator for tracking function execution time
-        - Records start and end times
-        - Calculates execution duration
-        - Logs to metrics file
-        - Supports daily metrics aggregation
-
 """
 
 
 import yaml
 from pathlib import Path
-from typing import Callable,Dict
-from datetime import datetime
+from typing import Dict
 import logging
 import logging.config
-import os
-import functools 
-from uuid import uuid4
 
-
-def _load_config(config_path: Path) -> Dict:
+def _load_config(config_path: Path) -> Dict[str,Dict]:
     """
     Load and parse YAML configuration file.
     

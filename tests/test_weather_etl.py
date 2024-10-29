@@ -17,7 +17,7 @@ def etl_config():
 @pytest.fixture(scope="session")
 def execution_id():
     """Session fixture for execution ID"""
-    return "9f01de68-eba6-4bcd-ac85-63db12f5e9f5"
+    return "0180ce75-cd7c-45e6-bf70-4c586fe00f47"
 
 # Input Validation Tests
 class TestInputValidation:
@@ -65,7 +65,7 @@ class TestETLSteps:
             path = f'data/output/{execution_id}/{file}'
             assert os.path.exists(path), f"Missing output file: {file}"
 
-    @pytest.mark.parametrize("step", ["extract", "transform", "load", "analyze", "profile"])
+    @pytest.mark.parametrize("step", ["extract", "transform", "load", "analyze", "dq_checks"])
     def test_step_metrics(self, execution_id, step):
         """Test metrics for each ETL step"""
         metric_file = f'data/metrics/{execution_id}/{step}/metadata.json'

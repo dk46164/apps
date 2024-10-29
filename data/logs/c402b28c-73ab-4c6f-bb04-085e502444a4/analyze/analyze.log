@@ -1,0 +1,17 @@
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._get_day_of_max_temperature: - Starting maximum temperature day analysis
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_day_of_max_temperature: - Identifying days with maximum temperature
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_day_of_max_temperature: - Converting dates to day names
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._get_day_of_max_temperature: - Maximum temperature days identified for 4 cities
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_day_of_max_temperature: - Date range: 2024-10-07 to 2024-10-09
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_day_of_max_temperature: - Maximum temperature range: 29.00°C to 31.70°C
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._get_max_temperature_per_city: - Starting temperature aggregation per city
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_max_temperature_per_city: - Aggregating temperatures for 4 cities
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_max_temperature_per_city: - Flattening multi-index columns
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._get_max_temperature_per_city: - Temperature aggregation completed for 4 cities
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._get_max_temperature_per_city: - Temperature ranges (Celsius) - Max: 28.10, Min: 24.80
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Starting temperature difference calculations
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Calculating Celsius temperature differences
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Calculating Fahrenheit temperature differences
+2024-10-30 00:52:07  - weather_etl.analyze - [INFO] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Temperature differences calculated for 12 records
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Celsius diff range: -1.50 to 1.30
+2024-10-30 00:52:07  - weather_etl.analyze - [DEBUG] - weather_temperature_analysis._calculate_forecasted_to_current_temp_diff: - Fahrenheit diff range: -2.70 to 2.30

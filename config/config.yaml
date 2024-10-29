@@ -1,53 +1,63 @@
-# config/config.yaml
+# Main application configuration
 default:
-  app_name: weather_etl
-  environment: dev
-  log_level: INFO
-  timezone: UTC
+  app_name: weather_etl          # Name of the application
+  environment: dev               # Development environment setting
+  log_level: INFO               # Default logging level
+  timezone: UTC                 # Application timezone
 
+# Directory structure configuration
 paths:
-  root: /Users/deepakkumar/Desktop/weather_analyzer
+  root: /Users/deepakkumar/Desktop/weather_analyzer  # Root directory of the project
   input:
-    dir: data/input
-    weather_file: ETL_developer_Case.json
+    dir: data/input                                 # Input data directory
+    weather_file: ETL_developer_Case.json           # Input weather data file
   output:
-    dir: data/output
+    dir: data/output                               # Output data directory
   logs:
-    dir: data/logs
+    dir: data/logs                                 # Log files directory
   checkpoint:
-    dir: data/checkpoints
+    dir: data/checkpoints                          # Checkpoints for data processing
   state:
-    dir: data/state
+    dir: data/state                                # State management directory
   metrics:
-    dir: data/metrics
+    dir: data/metrics                              # Metrics storage directory
 
+# Logging configuration
 logging:
-  version: 1
-  disable_existing_loggers: false
+  version: 1                                       # Logging configuration version
+  disable_existing_loggers: false                  # Keep existing loggers enabled
+  
+  # Log formatting configurations
   formatters:
     standard:
-      format: "%(asctime)s - %(name)s - [%(levelname)s]  - %(message)s"
-      datefmt: "%Y-%m-%d %H:%M:%S"
+      format: "%(asctime)s - %(name)s - [%(levelname)s]  - %(message)s"    # Standard log format
+      datefmt: "%Y-%m-%d %H:%M:%S"                                         # Date format for standard logs
     detailed:
-      format: "%(asctime)s  - %(name)s - [%(levelname)s] - %(module)s.%(funcName)s: - %(message)s"
-      datefmt: "%Y-%m-%d %H:%M:%S"
+      format: "%(asctime)s  - %(name)s - [%(levelname)s] - %(module)s.%(funcName)s: - %(message)s"  # Detailed log format
+      datefmt: "%Y-%m-%d %H:%M:%S"                                         # Date format for detailed logs
+
+  # Log handlers configuration
   handlers:
     console:
-      class: logging.StreamHandler
+      class: logging.StreamHandler                 # Console output handler
       level: INFO
       formatter: detailed
       stream: ext://sys.stdout
+    
+    # Individual component log handlers with daily rotation
     weather_etl_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Main ETL process handler
       level: DEBUG
       formatter: detailed
       filename: weather_etl.log
-      when: midnight
-      interval: 1
-      backupCount: 30
+      when: midnight                               # Rotate logs at midnight
+      interval: 1                                  # Rotation interval in days
+      backupCount: 30                             # Keep 30 days of logs
       encoding: utf8
+    
+    # Similar configuration for other components
     extract_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Data extraction handler
       level: DEBUG
       formatter: detailed
       filename: extract.log
@@ -55,8 +65,9 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
+    
     transform_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Data transformation handler
       level: DEBUG
       formatter: detailed
       filename: transform.log
@@ -64,8 +75,9 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
+    
     dq_checks_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Data quality checks handler
       level: DEBUG
       formatter: detailed
       filename: dq_checks.log
@@ -73,8 +85,9 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
+    
     analyze_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Data analysis handler
       level: DEBUG
       formatter: detailed
       filename: analyze.log
@@ -82,8 +95,9 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
+    
     load_handler:
-      class: logging.handlers.TimedRotatingFileHandler
+      class: logging.handlers.TimedRotatingFileHandler    # Data loading handler
       level: DEBUG
       formatter: detailed
       filename: load.log
@@ -91,47 +105,55 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
+
+  # Logger configurations for different components
   loggers:
-    weather_etl:
+    weather_etl:                                   # Main ETL logger
       level: DEBUG
       handlers: [console, weather_etl_handler]
       propagate: false
-    weather_etl.extract:
+    
+    weather_etl.extract:                          # Extract component logger
       level: DEBUG
       handlers: [console, extract_handler]
       propagate: false
-    weather_etl.transform:
+    
+    weather_etl.transform:                        # Transform component logger
       level: DEBUG
       handlers: [console, transform_handler]
       propagate: false
-    weather_etl.dq_checks:
+    
+    weather_etl.dq_checks:                        # Data quality checks logger
       level: DEBUG
       handlers: [console, dq_checks_handler]
       propagate: false
-    weather_etl.analyze:
+    
+    weather_etl.analyze:                          # Analysis component logger
       level: DEBUG
       handlers: [console, analyze_handler]
       propagate: false
-    weather_etl.load:
+    
+    weather_etl.load:                             # Load component logger
       level: DEBUG
       handlers: [console, load_handler]
       propagate: false
 
+# ETL pipeline configuration
 steps:
-  execution_order:
+  execution_order:                                # Order of ETL steps
     - extract
     - transform
     - dq_checks
     - analyze
     - load
   
-  dependencies:
+  dependencies:                                   # Step dependencies
     transform: 
-      - extract
+      - extract                                  # Transform depends on extract
     dq_checks:
-      - transform
+      - transform                                # DQ checks depend on transform
     analyze:
-      - dq_checks
+      - dq_checks                                # Analysis depends on DQ checks
     load:
-      - analyze
-  save_metadata: true
+      - analyze                                  # Load depends on analysis
+  save_metadata: true                            # Enable metadata saving

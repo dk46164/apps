@@ -20,31 +20,60 @@ Functions:
 
 
 from pathlib import Path
-from typing import Optional, List
+from typing import Optional, List,Tuple
 import logging
 from typing import List, Optional, Tuple
 
-def setup_directories(root_dir: Path,steps:List[str]) -> tuple[Path, Path]:
-    """Create and return checkpoint and state directories."""
+def setup_directories(root_dir: Path, steps: List[str]) -> Tuple[Path, Path]:
+    """
+    Create and return checkpoint and state directories.
+    
+    Args:
+        root_dir (Path): The root directory path where directories will be created
+        steps (List[str]): List of step names for which subdirectories will be created
+        
+    Returns:
+        Tuple[Path, Path]: A tuple containing (checkpoint_dir, state_dir) paths
+        
+    """
     checkpoint_dir = Path(root_dir).joinpath("checkpoints")
     state_dir = Path(root_dir).joinpath("state")
     
+    # Create main directories if they don't exist
     checkpoint_dir.mkdir(exist_ok=True, parents=True)
     state_dir.mkdir(exist_ok=True, parents=True)
     
+    # Create subdirectories for each step
     for step in steps:
         Path(state_dir).joinpath(step).mkdir(exist_ok=True, parents=True)
         
     return checkpoint_dir, state_dir
 
-def create_checkpoint(checkpoint_dir: Path, step: str) -> None:
-    """Create checkpoint file for completed step."""
+def create_checkpoint(checkpoint_dir: Path, step: str) -> bool:
+    """
+    Create checkpoint file for completed step.
+    
+    Args:
+        checkpoint_dir (Path): Directory where checkpoint files are stored
+        step (str): Name of the step to create checkpoint for
+        
+    Creates an empty file named '{step}.done' in the checkpoint directory
+    to mark the step as completed.
+    """
     Path(checkpoint_dir).joinpath(f"{step}.done").touch()
 
 def check_checkpoint(checkpoint_dir: Path, step: str) -> bool:
-    """Check if checkpoint exists for step."""
+    """
+    Check if checkpoint exists for step.
+    
+    Args:
+        checkpoint_dir (Path): Directory where checkpoint files are stored
+        step (str): Name of the step to check
+        
+    Returns:
+        bool: True if checkpoint exists (step is completed), False otherwise
+    """
     return Path(checkpoint_dir).joinpath(f"{step}.done").exists()
-
 
 def check_pipeline_state(
     state_dir: Path,
@@ -118,7 +147,7 @@ def get_required_steps(
     )
     
     if run_from_beginning:
-        logger.info("Pipeline will run from beginning due to inconsistent or completed state state")
+        logger.info("Pipeline will run from beginning due to inconsistent or completed state")
         return pipeline_steps[:pipeline_steps.index(target_step) + 1] if target_step else pipeline_steps
     
     # Set target step to last step if not specified

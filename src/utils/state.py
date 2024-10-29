@@ -16,11 +16,14 @@ Functions:
     - save_step_metadata: Stores step metadata history
     - get_previous_state: Determines previous pipeline state
     - clean_directory: Removes temporary files and directories
+    - get_run_id: Generate or retrieve a run ID for the pipeline execution
+    - set_env: Set essential environment variables for the application.
+
 
 """
 
 from pathlib import Path
-from typing import Dict, List,Optional
+from typing import Dict, List,Optional,Any
 import pandas as pd
 import logging
 import json
@@ -59,7 +62,7 @@ def save_step_data(data: Dict, step: str, state_dir: Path) -> None:
         logger.error(f"Failed to save step data: {str(e)}")
         raise
 
-def load_step_data(step: str, state_dir: Path, logger: logging.Logger) -> Dict:
+def load_step_data(step: str, state_dir: Path, logger: logging.Logger) -> Dict[str,pd.DataFrame]:
     """
     Load data for a specific step.
     
@@ -107,7 +110,7 @@ def log_metadata(
     output_files: Optional[list] = None,
     error: Optional[str] = None,
     additional_info: Optional[Dict] = None
-) -> dict:
+) -> Dict[str,Any]:
     """
     Create a detailed metadata entry for a pipeline step.
     
@@ -202,7 +205,7 @@ def get_previous_state(state: str,pipeline_states:List[str]) -> str:
         # Return -1 for invalid states
         return ''
 
-def clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=True):
+def clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=True) -> None:
     """
     Remove contents of specified directories while optionally preserving the directories themselves.
     
@@ -246,7 +249,7 @@ def clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=Tru
         raise e
 def get_run_id(state_dir: Path) -> str:
     """
-    Generate or retrieve a run ID for the application execution.
+    Generate or retrieve a run ID for the pipeline execution.
     
     This function either retrieves an existing run ID from a .run_id file
     in the state directory or generates a new one using UUID4.
@@ -277,7 +280,7 @@ def get_run_id(state_dir: Path) -> str:
         return run_id
 
 
-def set_env(env: str, run_id: str, app_name: str, metrics_dir: str):
+def set_env(env: str, run_id: str, app_name: str, metrics_dir: str) -> None:
     """
     Set essential environment variables for the application.
     

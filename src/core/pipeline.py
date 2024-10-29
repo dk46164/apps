@@ -31,7 +31,7 @@ from src.core import step_executor
 from src.utils import etl_logger
 
 
-def _setup_pipeline_directories(config: Dict, root_dir: Path,run_id:str) -> tuple[Path, Path, Path]:
+def _setup_pipeline_directories(config: Dict, root_dir: Path,run_id:str) -> tuple[Path, Path, Path,Path]:
     """
     Create required pipeline directories based on configuration.
     
@@ -82,8 +82,7 @@ def execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]
 
     # Create pipeline directories
     checkpoint_dir, state_dir, metrics_dir,output_dir = _setup_pipeline_directories(config, data_root_dir,run_id)
-    print(checkpoint_dir, state_dir, metrics_dir,output_dir)
-    input()
+
     # set env variables
     state.set_env(env,run_id,app_name,metrics_dir)
 

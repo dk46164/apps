@@ -1,0 +1,32 @@
+[
+    {
+        "step": "transform",
+        "status": "completed",
+        "start_time": 1730223974.023861,
+        "end_time": 1730223975.327355,
+        "duration": 1,
+        "input_files": [
+            {
+                "key": "raw_data",
+                "rows": 5
+            }
+        ],
+        "output_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-29T23:16:15.327377",
+        "stacktrace": null
+    }
+]

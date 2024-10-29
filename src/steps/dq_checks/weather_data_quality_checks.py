@@ -219,7 +219,7 @@ def _profile_weather_data(current_df: pd.DataFrame, forecast_df: pd.DataFrame, l
         logger.info(f"Completed processing {df_name} DataFrame")
     return (processed_dfs,dq_failed_dfs)
 
-def execute_dq_checks(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger):
+def execute_dq_checks(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]:
     """
     Main execution function for weather data quality checks.
 

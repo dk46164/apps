@@ -5,7 +5,8 @@ This script provides functionality to write weather data to CSV files.
 
 Functions:
 - save_dataframe_to_csv: Writes a DataFrame to a specified CSV file path.
-- export_weather_data_to_csv: Writes multiple weather data DataFrames to CSV files in a specified directory.
+- _export_weather_data_to_csv: Writes multiple weather data DataFrames to CSV files in a specified directory.
+- execute_load: function serves as the main entry point for the weather data load phase.
 
 """
 
@@ -13,7 +14,6 @@ from pathlib import Path
 import pandas as pd
 from typing import Dict
 import logging
-import os 
 
 def save_dataframe_to_csv(dataframe: pd.DataFrame, file_path: Path) -> None:
     """

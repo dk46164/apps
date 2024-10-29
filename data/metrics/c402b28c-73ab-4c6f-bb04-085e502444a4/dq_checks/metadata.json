@@ -1,0 +1,40 @@
+[
+    {
+        "step": "dq_checks",
+        "status": "completed",
+        "start_time": 1730229727.121556,
+        "end_time": 1730229727.1836429,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "raw_location",
+                "rows": 5
+            },
+            {
+                "key": "raw_current",
+                "rows": 5
+            },
+            {
+                "key": "raw_forecast",
+                "rows": 15
+            }
+        ],
+        "output_files": [
+            {
+                "key": "current_df",
+                "rows": 4
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "location_df",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-30T00:52:07.183661",
+        "stacktrace": null
+    }
+]

@@ -5,10 +5,10 @@ This script provides functions to analyze temperature data, specifically focusin
 forecasted and current temperatures.
 
 Functions:
-- calculate_forecasted_to_current_temp_diff: Computes the difference between forecasted 
+- _calculate_forecasted_to_current_temp_diff: Computes the difference between forecasted 
   and current temperatures in both Celsius and Fahrenheit.
-- get_max_temperature_per_city: Aggregates maximum, mean, and minimum temperatures per city.
-- get_day_of_max_temperature: Determines the day with the highest recorded maximum temperature 
+- _get_max_temperature_per_city: Aggregates maximum, mean, and minimum temperatures per city.
+- _get_day_of_max_temperature: Determines the day with the highest recorded maximum temperature 
   for each city.
 
 """
@@ -155,7 +155,7 @@ def _get_day_of_max_temperature(df: pd.DataFrame) -> pd.DataFrame:
     except Exception as e:
         logger.error(f"Error during maximum temperature day analysis")
 
-def execute_analyze(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict:
+def execute_analyze(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]:
     """
     Execute temperature analysis on weather data, including temperature differences,
     maximum temperatures, and temperature aggregations per city.

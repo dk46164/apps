@@ -1,0 +1,24 @@
+[
+    {
+        "step": "extract",
+        "status": "completed",
+        "start_time": 1730229725.104018,
+        "end_time": 1730229725.108382,
+        "duration": 0,
+        "input_files": [
+            {
+                "file_name": "/Users/deepakkumar/Desktop/weather_analyzer/data/input/ETL_developer_Case.json",
+                "file_size": "21.390625 KB"
+            }
+        ],
+        "output_files": [
+            {
+                "key": "raw_data",
+                "rows": 5
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-30T00:52:05.108398",
+        "stacktrace": null
+    }
+]
