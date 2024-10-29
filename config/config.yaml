@@ -64,11 +64,11 @@ logging:
       interval: 1
       backupCount: 30
       encoding: utf8
-    profile_handler:
+    dq_checks_handler:
       class: logging.handlers.TimedRotatingFileHandler
       level: DEBUG
       formatter: detailed
-      filename: profile.log
+      filename: dq_checks.log
       when: midnight
       interval: 1
       backupCount: 30
@@ -104,9 +104,9 @@ logging:
       level: DEBUG
       handlers: [console, transform_handler]
       propagate: false
-    weather_etl.profile:
+    weather_etl.dq_checks:
       level: DEBUG
-      handlers: [console, profile_handler]
+      handlers: [console, dq_checks_handler]
       propagate: false
     weather_etl.analyze:
       level: DEBUG
@@ -121,17 +121,17 @@ steps:
   execution_order:
     - extract
     - transform
-    - profile
+    - dq_checks
     - analyze
     - load
   
   dependencies:
     transform: 
       - extract
-    profile:
+    dq_checks:
       - transform
     analyze:
-      - profile
+      - dq_checks
     load:
       - analyze
   save_metadata: true

@@ -1,0 +1,44 @@
+[
+    {
+        "step": "load",
+        "status": "completed",
+        "start_time": 1730180009.611524,
+        "end_time": 1730180009.6154099,
+        "duration": 0,
+        "input_files": [
+            {
+                "key": "location_df",
+                "rows": 5
+            },
+            {
+                "key": "current_df",
+                "rows": 4
+            },
+            {
+                "key": "forecast_df",
+                "rows": 15
+            },
+            {
+                "key": "max_temp_df",
+                "rows": 4
+            },
+            {
+                "key": "forcasted_agg_df",
+                "rows": 4
+            },
+            {
+                "key": "curr_forc_temp_diff_df",
+                "rows": 12
+            }
+        ],
+        "output_files": [
+            {
+                "key": "load",
+                "rows": 0
+            }
+        ],
+        "error": null,
+        "timestamp": "2024-10-29T11:03:29.615419",
+        "stacktrace": null
+    }
+]

@@ -1,0 +1,9 @@
+2024-10-29 11:03:28  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Processing 5 locations
+2024-10-29 11:03:28  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Created process pool with 5 workers
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Successfully processed data for Bangkok, Thailand
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Successfully processed data for Chiang Mai, Thailand
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Successfully processed data for Phuket, Thailand
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Successfully processed data for Pattaya, Thailand
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Successfully processed data for Hat Yai, Thailand
+2024-10-29 11:03:29  - weather_etl.transform - [DEBUG] - weather_data_processing._get_parsed_weather_dataframes: - Concatenating results into final DataFrames
+2024-10-29 11:03:29  - weather_etl.transform - [INFO] - weather_data_processing._get_parsed_weather_dataframes: - Successfully completed weather data parsing

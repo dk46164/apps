@@ -16,15 +16,13 @@ Key features:
     - Error handling and reporting
 
 """
-
-
 from typing import Dict, Any
 import logging
 from pathlib import Path
 import pandas as pd
 from src.steps.extract import weather_data_reader
 from src.steps.transform import weather_data_processing
-from src.steps.profiling import weather_data_profiling
+from src.steps.dq_checks import weather_data_quality_checks
 from src.steps.analyze import weather_temperature_analysis 
 from src.steps.load import weather_csv_writer
 from src.utils import state, checkpoints
@@ -62,7 +60,7 @@ def execute_step(
     step_functions = {
         'extract': weather_data_reader.execute_extract,
         'transform': weather_data_processing.execute_transform,
-        'profile': weather_data_profiling.execute_profile,
+        'dq_checks': weather_data_quality_checks.execute_dq_checks,
         'analyze': weather_temperature_analysis.execute_analyze,
         'load': weather_csv_writer.execute_load
     }

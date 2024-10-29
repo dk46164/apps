@@ -7,42 +7,47 @@
 │   ├── input
 │   │   └── ETL_developer_Case.json
 │   ├── logs
-│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │   └── 0180ce75-cd7c-45e6-bf70-4c586fe00f47
 │   │       ├── analyze
 │   │       │   └── analyze.log
+│   │       ├── dq_checks
+│   │       │   └── dq_checks.log
 │   │       ├── extract
 │   │       │   └── extract.log
 │   │       ├── load
 │   │       │   └── load.log
-│   │       ├── profile
-│   │       │   └── profile.log
 │   │       ├── transform
 │   │       │   └── transform.log
 │   │       └── weather_etl.log
 │   ├── metrics
-│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │   └── 0180ce75-cd7c-45e6-bf70-4c586fe00f47
 │   │       ├── analyze
+│   │       │   └── metadata.json
+│   │       ├── dq_checks
 │   │       │   └── metadata.json
 │   │       ├── extract
 │   │       │   └── metadata.json
 │   │       ├── load
 │   │       │   └── metadata.json
-│   │       ├── profile
-│   │       │   └── metadata.json
 │   │       └── transform
 │   │           └── metadata.json
 │   ├── output
-│   │   └── 9f01de68-eba6-4bcd-ac85-63db12f5e9f5
+│   │   └── 0180ce75-cd7c-45e6-bf70-4c586fe00f47
 │   │       ├── aggregated_temp.csv
 │   │       ├── current_weather.csv
 │   │       ├── forecast_weather.csv
 │   │       ├── forecasted_current_temp.csv
 │   │       ├── location.csv
-│   │       └── max_temp.csv
+│   │       ├── max_temp.csv
+│   │       └── sandbox
+│   │           ├── current.csv
+│   │           ├── forecast.csv
+│   │           └── location.csv
 │   └── state
 ├── dir.txt
 ├── docs
-│   └── ETL_developer_Case.docx
+│   ├── ETL_developer_Case.docx
+│   └── readme.md
 ├── src
 │   ├── core
 │   │   ├── __pycache__
@@ -60,6 +65,13 @@
 │   │   │   │   ├── __init__.cpython-312.pyc
 │   │   │   │   └── weather_temperature_analysis.cpython-312.pyc
 │   │   │   └── weather_temperature_analysis.py
+│   │   ├── dq_checks
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   ├── weather_data_profiling.cpython-312.pyc
+│   │   │   │   └── weather_data_quality_checks.cpython-312.pyc
+│   │   │   └── weather_data_quality_checks.py
 │   │   ├── extract
 │   │   │   ├── __init__.py
 │   │   │   ├── __pycache__
@@ -74,12 +86,6 @@
 │   │   │   │   ├── __init__.cpython-312.pyc
 │   │   │   │   └── weather_csv_writer.cpython-312.pyc
 │   │   │   └── weather_csv_writer.py
-│   │   ├── profiling
-│   │   │   ├── __init__.py
-│   │   │   ├── __pycache__
-│   │   │   │   ├── __init__.cpython-312.pyc
-│   │   │   │   └── weather_data_profiling.cpython-312.pyc
-│   │   │   └── weather_data_profiling.py
 │   │   └── transform
 │   │       ├── __init__.py
 │   │       ├── __pycache__
@@ -101,8 +107,12 @@
 │       ├── etl_logger.py
 │       └── state.py
 ├── tests
-│   └── test_validate.py
-├── tree.txt
+│   ├── __pycache__
+│   │   ├── test_etl_steps.cpython-312-pytest-7.4.4.pyc
+│   │   ├── test_input_validation.cpython-312-pytest-7.4.4.pyc
+│   │   ├── test_pipeline_execution.cpython-312-pytest-7.4.4.pyc
+│   │   └── test_weather_etl.cpython-312-pytest-7.4.4.pyc
+│   └── test_weather_etl.py
 └── weather_etl.py
 
-41 directories, 65 files
+43 directories, 73 files
