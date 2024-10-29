@@ -105,9 +105,11 @@ Key Classes:
 Handles the main data transformation logic.
 
 Key functions:
-    - `_combine_weather_data(key:int,data: Dict[str, Any]) -> Tuple[pd.DataFrame]`: Combines location and current weather data with forecast data.
-    - `_get_parsed_weather_dataframes(data: Dict[str, Any]) -> Tuple[pd.DataFrame]`: Processes multiple weather data inputs concurrently.
-    - `execute_transform(data: Dict, config_dict: Dict, logger: logging.Logger) -> Dict:`: function serves as the main entry point for the transformation pipeline
+`_combine_weather_data(key:int,data: Dict[str, Any]) -> Tuple[pd.DataFrame]`: Combines location and current weather data with forecast data.
+    
+`_get_parsed_weather_dataframes(data: Dict[str, Any]) -> Tuple[pd.DataFrame]`: Processes multiple weather data inputs concurrently.
+
+`execute_transform(data: Dict, config_dict: Dict, logger: logging.Logger) -> Dict:`: function serves as the main entry point for the transformation pipeline
 
 ### 3.3 Data Quality Checks (`src/steps/dq_checks/`)
 
@@ -115,15 +117,20 @@ Key functions:
 Implements data validation rules to ensure data quality and quarantie the data quality failed records
 
 Key functions:
-    - `_fill_missing_values(df: pd.DataFrame) -> pd.DataFrame`:
-            - Fill integer columns with 0.
-            - Fill float columns with 0.0.
-            - Fill string/object columns with an empty string.
-    - `_validate_location_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on location data
-    - `_validate_forecast_weather_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on forecasted weather data
-    - `_validate_current_weather_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on current weather data
-    - `_profile_weather_data(current_df: pd.DataFrame, forecast_df: pd.DataFrame, location_df: pd.DataFrame) -> List[List[pd.DataFrame]]`:    Processes multiple weather-related DataFrames by filling missing values and standardizing formats.
-    - `execute_dq_checks(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: function serves as the main entry point for the weather data quality checks.
+`_fill_missing_values(df: pd.DataFrame) -> pd.DataFrame`:
+        Fill integer columns with 0.
+        Fill float columns with 0.0.
+        Fill string/object columns with an empty string
+
+`_validate_location_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on location data
+
+`_validate_forecast_weather_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on forecasted weather data
+
+`_validate_current_weather_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]`: Perform Data quality checks on current weather data
+
+`_profile_weather_data(current_df: pd.DataFrame, forecast_df: pd.DataFrame, location_df: pd.DataFrame) -> List[List[pd.DataFrame]]`:    Processes multiple weather-related DataFrames by filling missing values and standardizing formats.
+
+`execute_dq_checks(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: function serves as the main entry point for the weather data quality checks.
 
 
 ### 3.4 Analyze (`src/steps/analyze/`)
@@ -132,12 +139,15 @@ Key functions:
 Performs analysis on the processed temperature data.
 
 Key functions:
-    - `_calculate_forecasted_to_current_temp_diff(df: pd.DataFrame) -> pd.DataFrame`: Computes the difference between forecasted 
+`_calculate_forecasted_to_current_temp_diff(df: pd.DataFrame) -> pd.DataFrame`: Computes the difference between forecasted 
     and current temperatures in both Celsius and Fahrenheit.
-    - `_get_max_temperature_per_city(df: pd.DataFrame) -> pd.DataFrame`: Aggregates maximum, mean, and minimum temperatures per city.
-    - `_get_day_of_max_temperature(df: pd.DataFrame) -> pd.DataFrame`: Determines the day with the highest recorded maximum temperature 
+
+`_get_max_temperature_per_city(df: pd.DataFrame) -> pd.DataFrame`: Aggregates maximum, mean, and minimum temperatures per city.
+
+`_get_day_of_max_temperature(df: pd.DataFrame) -> pd.DataFrame`: Determines the day with the highest recorded maximum temperature 
     for each city.
-    - `execute_analyze(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: function serves as the main entry point for the weather data Analysis.
+
+`execute_analyze(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: function serves as the main entry point for the weather data Analysis.
 
 
 ### 3.5 Load (`src/steps/load/`)
@@ -146,9 +156,11 @@ Key functions:
 Handles writing the processed data to CSV files.
 
 Key functions:
-    - `save_dataframe_to_csv(dataframe: pd.DataFrame, file_path: Path) -> None`: Writes a DataFrame to a CSV file.
-    - `_export_weather_data_to_csv(directory_path: str, max_temp_data: pd.DataFrame, aggregated_data: pd.DataFrame,forecasted_vs_current_data: pd.DataFrame,current_df: pd.DataFrame, forcast_df: pd.DataFrame,location_df: pd.DataFrame) -> None`:     Write weather data DataFrames to CSV files in the specified directory.
-    - `execute_load(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> None`: function serves as the main entry point for the weather data load phase.
+`save_dataframe_to_csv(dataframe: pd.DataFrame, file_path: Path) -> None`: Writes a DataFrame to a CSV file.
+
+`_export_weather_data_to_csv(directory_path: str, max_temp_data: pd.DataFrame, aggregated_data: pd.DataFrame,forecasted_vs_current_data: pd.DataFrame,current_df: pd.DataFrame, forcast_df: pd.DataFrame,location_df: pd.DataFrame) -> None`:     Write weather data DataFrames to CSV files in the specified directory.
+
+`execute_load(data: Dict[str, pd.DataFrame], config_dict: Dict, logger: logging.Logger) -> None`: function serves as the main entry point for the weather data load phase.
 
 ### 3.6 Core (`src/core/`)
 
@@ -166,8 +178,9 @@ Key Features:
     - Data validation and quality checks
 
 Key functions:
-    - `_setup_pipeline_directories(config: Dict, root_dir: Path,run_id:str) -> tuple[Path, Path, Path,Path]`: Helper function to create pipeline directories
-    - `execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]`:   Execute data processing pipeline with checkpoint-based resumability.
+`_setup_pipeline_directories(config: Dict, root_dir: Path,run_id:str) -> tuple[Path, Path, Path,Path]`: Helper function to create pipeline directories
+
+`execute_pipeline(config_path: Path = 'config/config.yaml') -> Dict[str, Any]`:   Execute data processing pipeline with checkpoint-based resumability.
 
 #### step_executor.py
 
@@ -176,7 +189,8 @@ for weather data analysis. It handles extraction, transformation, dq_checks, ana
 of weather data while providing state management, checkpoints and logging.
 
 Key Functions:
-    - `execute_step(step: str, data: Dict[str, Any], state_dir: Path,checkpoint_dir: Path, config_dict: Dict,logger: logging.Logger) -> Dict[str, Any]`: Executes a single pipeline step with state management and checkpointing
+
+`execute_step(step: str, data: Dict[str, Any], state_dir: Path,checkpoint_dir: Path, config_dict: Dict,logger: logging.Logger) -> Dict[str, Any]`: Executes a single pipeline step with state management and checkpointing
 
 Key features:
     - Executes pipeline steps based on function mapping
@@ -193,8 +207,9 @@ This module provides centralized logging configuration for the weather ETL pipel
 It handles log file setup, formatting, and execution time tracking.
 
 Key Functions:
-    - `_load_config(config_path: Path) -> Dict[str,Dict]`: Helper function to load YAML configuration file
-    - `get_logger(config_path: Path,runid:str) -> logging.Logger:`: Configures and returns logger instance
+`_load_config(config_path: Path) -> Dict[str,Dict]`: Helper function to load YAML configuration file
+
+`get_logger(config_path: Path,runid:str) -> logging.Logger:`: Configures and returns logger instance
         - Loads YAML configuration
         - Sets up log directories and files
         - Configures handlers and formatters
@@ -209,14 +224,20 @@ This module handles state management for the ETL pipeline, including:
     - set the pipeline envrionment variables
 
 Key Functions:
-    - `save_step_data(data: Dict, step: str, state_dir: Path) -> None`: Persists step output data
-    - `load_step_data(step: str, state_dir: Path, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: Retrieves step data from storage
-    - `log_metadata(step: str,status: str,start_time: datetime,duration: int,end_time: Optional[datetime] = None,input_files: Optional[list] = None,output_files: Optional[list] = None,error: Optional[str] = None,additional_info: Optional[Dict] = None) -> Dict[str,Any]`: Creates execution metadata records
-    - `save_step_metadata(step: str, metadata: dict, metric_dir: Path) -> None`: Stores step metadata history
-    - `get_previous_state(state: str,pipeline_states:List[str]) -> str`: Determines previous pipeline state
-    - `clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=True) -> None`: Removes temporary files and directories
-    - `get_run_id(state_dir: Path) -> str`: Generate or retrieve a run ID for the pipeline execution
-    - `set_env(env: str, run_id: str, app_name: str, metrics_dir: str) -> None`:Set essential environment variables for the pipeline run
+`save_step_data(data: Dict, step: str, state_dir: Path) -> None`: Persists step output data
+
+`load_step_data(step: str, state_dir: Path, logger: logging.Logger) -> Dict[str,pd.DataFrame]`: Retrieves step data from storage
+`log_metadata(step: str,status: str,start_time: datetime,duration: int,end_time: Optional[datetime] = None,input_files: Optional[list] = None,output_files: Optional[list] = None,error: Optional[str] = None,additional_info: Optional[Dict] = None) -> Dict[str,Any]`: Creates execution metadata records
+
+`save_step_metadata(step: str, metadata: dict, metric_dir: Path) -> None`: Stores step metadata history
+
+`get_previous_state(state: str,pipeline_states:List[str]) -> str`: Determines previous pipeline state
+
+`clean_directory(directorys: List[Path], logger: logging.Logger, keep_dir=True) -> None`: Removes temporary files and directories
+
+`get_run_id(state_dir: Path) -> str`: Generate or retrieve a run ID for the pipeline execution
+
+`set_env(env: str, run_id: str, app_name: str, metrics_dir: str) -> None`:Set essential environment variables for the pipeline run
 
 #### checkpoints.py
 This module provides functionality for managing pipeline execution state through 
@@ -225,11 +246,15 @@ and determines which pipeline steps need to be executed based on current state.
 
 
 Functions:
-    - `setup_directories(root_dir: Path,steps:List[str]) -> Tuple[Path, Path]`: Creates checkpoint and state directories
-    - `create_checkpoint(checkpoint_dir: Path, step: str) -> bool`: Creates checkpoint file for completed step
-    - `check_checkpoint(checkpoint_dir: Path, step: str) -> bool`: Verifies if checkpoint exists for step
-    - `check_pipeline_state(state_dir: Path,checkpoint_dir: Path,pipeline_steps: List[str]) -> Tuple[bool, Optional[str]]`: Check pipeline state and determine if it needs to run from beginning.
-    - `get_required_steps(pipeline_steps: List[str],state_dir: Path,checkpoint_dir: Path,logger:logging.Logger,failed_step: Optiona[str]= None,target_step: Optional[str]= None) -> List[str]`: Determine which steps need to be executed based on pipeline state
+`setup_directories(root_dir: Path,steps:List[str]) -> Tuple[Path, Path]`: Creates checkpoint and state directories
+
+`create_checkpoint(checkpoint_dir: Path, step: str) -> bool`: Creates checkpoint file for completed step
+
+`check_checkpoint(checkpoint_dir: Path, step: str) -> bool`: Verifies if checkpoint exists for step
+
+`check_pipeline_state(state_dir: Path,checkpoint_dir: Path,pipeline_steps: List[str]) -> Tuple[bool, Optional[str]]`: Check pipeline state and determine if it needs to run from beginning.
+
+`get_required_steps(pipeline_steps: List[str],state_dir: Path,checkpoint_dir: Path,logger:logging.Logger,failed_step: Optiona[str]= None,target_step: Optional[str]= None) -> List[str]`: Determine which steps need to be executed based on pipeline state
 
 ## 3.8. Configurations(`config/config.yaml`)
 The `config.yaml` file allows for flexible customization and includes the following sections:
