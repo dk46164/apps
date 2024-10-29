@@ -39,10 +39,10 @@ The ETL process documentation can be found at:
 ### Setting Up the Environment
 
 **Clone the repository**:
-    ```bash
+```bash
    git clone <repository-url>
    cd weather_analyzer
-
+```
 **Config Changes**:
 Update the following keys in the configuration file : `config/coingfi.yaml`
 ```yaml
