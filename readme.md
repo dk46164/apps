@@ -43,6 +43,16 @@ The ETL process documentation can be found at:
    git clone <repository-url>
    cd weather_analyzer
 
+**Config Changes**:
+Update the following keys in the configuration file : `config/coingfi.yaml`
+```yaml
+paths:
+  root: /Users/deepakkumar/Desktop/weather_analyzer   # point to current input directory
+  input:
+    dir: data/input                                   # Input data directory
+    weather_file: ETL_developer_Case.json
+``` 
+
 ## Run the pipeline
 To run the pipeline:
 
